@@ -1,0 +1,7 @@
+D:\Study\4kurs\EPAM\CalcTest\CalcTest\bin\Debug\CalcTest.dll
+D:\Study\4kurs\EPAM\CalcTest\CalcTest\bin\Debug\CalcTest.pdb
+D:\Study\4kurs\EPAM\CalcTest\CalcTest\bin\Debug\nunit.framework.dll
+D:\Study\4kurs\EPAM\CalcTest\CalcTest\bin\Debug\nunit.framework.xml
+D:\Study\4kurs\EPAM\CalcTest\CalcTest\obj\Debug\CalcTest.csprojResolveAssemblyReference.cache
+D:\Study\4kurs\EPAM\CalcTest\CalcTest\obj\Debug\CalcTest.dll
+D:\Study\4kurs\EPAM\CalcTest\CalcTest\obj\Debug\CalcTest.pdb

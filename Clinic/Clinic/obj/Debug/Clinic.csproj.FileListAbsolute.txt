@@ -1,0 +1,6 @@
+D:\Study\4kurs\EPAM\Clinic\Clinic\bin\Debug\Clinic.exe.config
+D:\Study\4kurs\EPAM\Clinic\Clinic\bin\Debug\Clinic.exe
+D:\Study\4kurs\EPAM\Clinic\Clinic\bin\Debug\Clinic.pdb
+D:\Study\4kurs\EPAM\Clinic\Clinic\obj\Debug\Clinic.csprojResolveAssemblyReference.cache
+D:\Study\4kurs\EPAM\Clinic\Clinic\obj\Debug\Clinic.exe
+D:\Study\4kurs\EPAM\Clinic\Clinic\obj\Debug\Clinic.pdb
