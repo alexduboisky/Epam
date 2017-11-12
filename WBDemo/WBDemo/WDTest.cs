@@ -36,7 +36,7 @@ namespace WBDemo
 
             String user = Chrome.FindElement(By.XPath("//meta[@name='user-login']")).GetAttribute("content");
             Assert.AreEqual(user, login);
-            //TestGitFirVS
+            
             Chrome.Quit();
         }
     }
