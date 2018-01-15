@@ -22,7 +22,7 @@ namespace Framework.Pages
         {
             try
             {
-                IWebElement resultList = driver.FindElement(By.ClassName("resultContentHolder"));
+                IWebElement resultList = driver.FindElement(By.ClassName("boxShadow  scheduledCon"));
             }
             catch
             {
@@ -35,7 +35,7 @@ namespace Framework.Pages
         {
             try
             {
-                IWebElement dataError = driver.FindElement(By.XPath("//*[@id='dateErr21']"));
+                IWebElement dataError = driver.FindElement(By.Id("dateErr21"));
             }
             catch
             {
@@ -48,7 +48,20 @@ namespace Framework.Pages
         {
             try
             {
-                IWebElement placeError = driver.FindElement(By.XPath("//*[@id='errormsg_Z']"));
+                IWebElement placeError = driver.FindElement(By.Id("errormsg_Z"));
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Place2Error()
+        {
+            try
+            {
+                IWebElement placeError = driver.FindElement(By.ClassName("clearfix"));
             }
             catch
             {

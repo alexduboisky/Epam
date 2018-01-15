@@ -13,18 +13,18 @@ namespace Framework.Pages
     {
         private IWebDriver driver;
 
-        private const string URL = "https://www.bahn.com/en/view/index.shtml";
+        private const string BASE_URL = "https://www.bahn.com/en/view/index.shtml";
 
-        [FindsBy(How=How.XPath,Using = "//*[@id='js - auskunft - autocomplete - from']")]
+        [FindsBy(How=How.Id,Using = "js-auskunft-autocomplete-from")]
         private IWebElement inputDepartureCity;
 
-        [FindsBy(How = How.XPath,Using = "//*[@id='js - auskunft - autocomplete - to']")]
+        [FindsBy(How = How.Id,Using = "js-auskunft-autocomplete-to")]
         private IWebElement inputArrivalCity;
 
         [FindsBy(How = How.XPath,Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[3]/div[2]/select")]
         private IWebElement countTravellerList;
 
-        [FindsBy(How = How.XPath,Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[3]/div[2]/select")]
+        [FindsBy(How = How.Name,Using = "tariffTravellerType.1")]
         private IWebElement ageTraveller1;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[3]/div[5]/div[1]/select")]
@@ -39,7 +39,7 @@ namespace Framework.Pages
         [FindsBy(How =How.XPath,Using = "//*[@id='radio08']")]
         private IWebElement secondClassRadioButton;
 
-        [FindsBy(How = How.Id, Using = "dp1515958955850")]
+        [FindsBy(How = How.Id, Using = "dp1515981870612")]
         private IWebElement dateDeparture;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[1]/div[2]/div[2]/input")]
@@ -62,7 +62,7 @@ namespace Framework.Pages
 
         public void OpenPage()
         {
-            driver.Navigate().GoToUrl(URL);
+            this.driver.Navigate().GoToUrl(BASE_URL);
         }
 
         public void SearchTickets()
@@ -85,9 +85,9 @@ namespace Framework.Pages
             this.dateDeparture.SendKeys(dateDeparture);
         }
 
-        public void setDataReturn(string dataReturn)
+        public void setDateReturn(string dateReturn)
         {
-            this.dateReturn.SendKeys(dataReturn);
+            this.dateReturn.SendKeys(dateReturn);
         }
 
         public void setTimeDeparture(string timeDeparture)
@@ -100,10 +100,10 @@ namespace Framework.Pages
             this.timeReturn.SendKeys(timeReturn);
         }
 
-        public void setCountTraveller(string count)
+        public void setCountTraveller(int count)
         {
             var selectElement = new SelectElement(countTravellerList);
-            selectElement.SelectByValue(count);
+            selectElement.SelectByValue(Convert.ToString(count));
         }
 
         public void setAgeTraveller1(string ageTrav1)

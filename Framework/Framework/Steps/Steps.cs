@@ -10,13 +10,9 @@ namespace Framework.Steps
 {
     class Steps
     {
-        string defaultDeparture = "FRANKFURT(MAIN)";
-        string defaultArrival = "BERLIN";
-        string errorArrival = "Minsk";
-
         IWebDriver driver;
 
-        MainPage mainPage;
+        private MainPage mainPage;
         ResultPage resultPage;
 
         public void InitBrowser()
@@ -29,65 +25,71 @@ namespace Framework.Steps
             Driver.DriverInstance.CloseBrowser();
         }
 
-        public void OpenPage()
-        {
-            
-            mainPage.OpenPage();
-        }
-
         public void SearchButtonClick()
         {
+            var mainPage = new MainPage(driver);
             mainPage.SearchTickets();
         }
 
         public void SetDistanation(string departure, string arrive)
         {
+            var mainPage = new MainPage(driver);
+            mainPage.OpenPage();
             mainPage.setDepartureCity(departure);
             mainPage.setArrivalCity(arrive);
         }
 
         public void SetTimeDeparture(string timeDeparture)
         {
+            var mainPage = new MainPage(driver);
             mainPage.setTimeDeparture(timeDeparture);
         }
 
         public void SetTimeReturn(string timeReturn)
         {
+            var mainPage = new MainPage(driver);
             mainPage.setTimeReturn(timeReturn);
         }
 
-        public void SetCountTraveller(string countTraveller)
+        public void SetCountTraveller(int countTraveller)
         {
+            var mainPage = new MainPage(driver);
             mainPage.setCountTraveller(countTraveller);
         }
 
         public void SetAgeTraveller1(string ageTraveller1)
         {
+            var mainPage = new MainPage(driver);
             mainPage.setAgeTraveller1(ageTraveller1);
         }
 
         public void SetAgeTraveller2(string ageTraveller2)
         {
+            var mainPage = new MainPage(driver);
             mainPage.setAgeTraveller2(ageTraveller2);
         }
 
-        public void SetDataDeparture(string dataDeparture)
+        public void SetDateDeparture(string dateDeparture)
         {
-            mainPage.setDateDeparture(dataDeparture);
+            var mainPage = new MainPage(driver);
+            mainPage.setDateDeparture(dateDeparture);
         }
 
-        public void SetDataReturn(string dataReturn)
+        public void SetDateReturn(string dateReturn)
         {
-            mainPage.setDataReturn(dataReturn);
+            var mainPage = new MainPage(driver);
+            mainPage.setDateReturn(dateReturn);
         }
 
         public void SetFirstClass()
         {
+            var mainPage = new MainPage(driver);
             mainPage.selectFirstClass();
         }
 
         public void SetSecondClass()
         {
+            var mainPage = new MainPage(driver);
             mainPage.selectSecondClass();
         }
 
@@ -98,19 +100,29 @@ namespace Framework.Steps
 
         public bool Result()
         {
+            var resultPage = new ResultPage(driver);
             resultPage.Result();
             return true;
         }
 
         public bool DataError()
         {
+            var resultPage = new ResultPage(driver);
             resultPage.DataError();
             return true;
         }
 
         public bool PlaceError()
         {
+            var resultPage = new ResultPage(driver);
             resultPage.PlaceError();
+            return true;
+        }
+
+        public bool Place2Error()
+        {
+            var resultPage = new ResultPage(driver);
+            resultPage.Place2Error();
             return true;
         }
     }

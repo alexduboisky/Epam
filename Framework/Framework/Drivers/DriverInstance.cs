@@ -16,6 +16,7 @@ namespace Framework.Driver
             if (driver == null)
             {
                 driver = new FirefoxDriver();
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                 driver.Manage().Window.Maximize();
             }
             return driver;
