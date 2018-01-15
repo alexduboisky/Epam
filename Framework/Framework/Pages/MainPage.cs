@@ -33,19 +33,19 @@ namespace Framework.Pages
         [FindsBy(How = How.XPath,Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[3]/div[4]/div[2]/select")]
         private IWebElement bahnCardList;
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='radio07']")]
+        [FindsBy(How = How.Id, Using = "radio07")]
         private IWebElement firstClassRadioButton;
 
-        [FindsBy(How =How.XPath,Using = "//*[@id='radio08']")]
+        [FindsBy(How =How.Id,Using = "radio08")]
         private IWebElement secondClassRadioButton;
 
-        [FindsBy(How = How.Id, Using = "dp1515981870612")]
+        [FindsBy(How = How.ClassName, Using = "center-inline hasDatepicker")]
         private IWebElement dateDeparture;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[1]/div[2]/div[2]/input")]
         private IWebElement timeDeparture;
 
-        [FindsBy(How = How.Id, Using = "dp1515958955851")]
+        [FindsBy(How = How.ClassName, Using = "center-inline hasDatepicker")]
         private IWebElement dateReturn;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[1]/div[2]/div[4]/div[2]/input")]
@@ -53,6 +53,9 @@ namespace Framework.Pages
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[2]/div/div/div[2]/div/div[4]/div/form/fieldset[5]/div/input[1]")]
         private IWebElement searchButton;
+
+        [FindsBy(How = How.XPath, Using = "//*[@id='js-tab-auskunft']/div/form/fieldset[1]/div[1]/a[2]")]
+        private IWebElement openButton;
 
         public MainPage(IWebDriver driver)
         {
@@ -63,6 +66,11 @@ namespace Framework.Pages
         public void OpenPage()
         {
             this.driver.Navigate().GoToUrl(BASE_URL);
+        }
+
+        public void OpenInformation()
+        {
+            openButton.Click();
         }
 
         public void SearchTickets()

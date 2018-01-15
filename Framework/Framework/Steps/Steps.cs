@@ -25,6 +25,12 @@ namespace Framework.Steps
             Driver.DriverInstance.CloseBrowser();
         }
 
+        public void OpenButtonClick()
+        {
+            var mainPage = new MainPage(driver);
+            mainPage.OpenInformation();
+        }
+
         public void SearchButtonClick()
         {
             var mainPage = new MainPage(driver);
@@ -108,22 +114,22 @@ namespace Framework.Steps
         public bool DataError()
         {
             var resultPage = new ResultPage(driver);
-            resultPage.DataError();
-            return true;
+            var result =resultPage.DataError();
+            return result;
         }
 
         public bool PlaceError()
         {
             var resultPage = new ResultPage(driver);
-            resultPage.PlaceError();
-            return true;
+            var result =resultPage.PlaceError();
+            return result;
         }
 
         public bool Place2Error()
         {
             var resultPage = new ResultPage(driver);
-            resultPage.Place2Error();
-            return true;
+            var result = resultPage.Place2Error();
+            return result;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using System.Diagnostics;
 
 namespace Framework.Driver
@@ -15,7 +15,7 @@ namespace Framework.Driver
         {
             if (driver == null)
             {
-                driver = new FirefoxDriver();
+                driver = new ChromeDriver();
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                 driver.Manage().Window.Maximize();
             }
@@ -27,7 +27,7 @@ namespace Framework.Driver
             driver.Quit();
             driver = null;
 
-            foreach (var process in Process.GetProcessesByName("geckodriver"))
+            foreach (var process in Process.GetProcessesByName("chromedriver"))
             {
                 process.Kill();
             }

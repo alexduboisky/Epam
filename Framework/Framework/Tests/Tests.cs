@@ -32,6 +32,7 @@ namespace Framework.Tests
         public void InvalidStation()
         {
             steps.SetDistanation(defaultDeparture, errorArrival);
+            steps.OpenButtonClick();
             steps.SearchButtonClick();
             Assert.IsTrue(steps.PlaceError());
         }
@@ -40,6 +41,7 @@ namespace Framework.Tests
         public void InvalidTime()
         {
             steps.SetDistanation(defaultDeparture, defaultArrival);
+            steps.OpenButtonClick();
             steps.SetDateReturn(Convert.ToString(DateTime.Today));
             steps.SetTimeDeparture("15:00");
             steps.SetTimeReturn("13:00");
@@ -51,6 +53,7 @@ namespace Framework.Tests
         public void ValidStation()
         {
             steps.SetDistanation(defaultDeparture, defaultArrival);
+            steps.OpenButtonClick();
             steps.SearchButtonClick();
             Assert.IsTrue(steps.Result());
         }
@@ -59,6 +62,7 @@ namespace Framework.Tests
         public void InvalidStation2()
         {
             steps.SetDistanation(defaultArrival, defaultArrival);
+            steps.OpenButtonClick();
             steps.SearchButtonClick();
             Assert.IsTrue(steps.Place2Error());
         }
@@ -67,6 +71,7 @@ namespace Framework.Tests
         public void ValidDate()
         {
             steps.SetDistanation(defaultDeparture, defaultArrival);
+            steps.OpenButtonClick();
             steps.SetDateDeparture(Convert.ToString(DateTime.Now.AddDays(+3)));
             steps.SearchButtonClick();
             Assert.IsTrue(steps.Result());
@@ -76,6 +81,7 @@ namespace Framework.Tests
         public void CountTraveller()
         {
             steps.SetDistanation(defaultArrival, defaultArrival);
+            steps.OpenButtonClick();
             steps.SetCountTraveller(2);
             steps.SearchButtonClick();
             Assert.IsTrue(steps.Result());
@@ -85,6 +91,7 @@ namespace Framework.Tests
         public void AgeTraveller()
         {
             steps.SetDistanation(defaultDeparture, defaultArrival);
+            steps.OpenButtonClick();
             steps.SetAgeTraveller1("F");
             steps.SearchButtonClick();
             Assert.IsTrue(steps.Result());
@@ -94,6 +101,7 @@ namespace Framework.Tests
         public void AgeAndCountTraveller()
         {
             steps.SetDistanation(defaultDeparture, defaultArrival);
+            steps.OpenButtonClick();
             steps.SetCountTraveller(2);
             steps.SetAgeTraveller2("F");
             steps.SearchButtonClick();
@@ -104,6 +112,7 @@ namespace Framework.Tests
         public void ClassTraveller()
         {
             steps.SetDistanation(defaultDeparture, defaultArrival);
+            steps.OpenButtonClick();
             steps.SetFirstClass();
             steps.SearchButtonClick();
             Assert.IsTrue(steps.Result());
@@ -113,6 +122,7 @@ namespace Framework.Tests
         public void ClassAndBahnCardTraveller()
         {
             steps.SetDistanation(defaultDeparture, defaultArrival);
+            steps.OpenButtonClick();
             steps.SetFirstClass();
             steps.SelectBahnCard("3");
             steps.SearchButtonClick();
